@@ -31,6 +31,12 @@ A premium custom theme for **Firefox ONE**.
 - `userContent.css`
 - `Components/one_root-personal.css`
 - `Components/hellnrock-firefox-theme.css`
+- 
+### Base Theme
+This is a heavily customized version of **[Firefox ONE](https://github.com/Godiesc/firefox-one)** created by **Godiesc**.
+
+- Original repository: [github.com/Godiesc/firefox-one](https://github.com/Godiesc/firefox-one)
+- Licensed under [Mozilla Public License 2.0](https://github.com/Godiesc/firefox-one/blob/main/LICENSE)
 
 ---
 
