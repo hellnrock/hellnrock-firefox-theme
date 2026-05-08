@@ -1,0 +1,56 @@
+/* =====================================================================
+   HellNRock — userContent.css
+   pollo_con_yerbabuena | hellnrock.com
+   ===================================================================== */
+
+@-moz-document url("about:newtab"), url("about:home") {
+    body {
+        background-image: 
+            url("https://hellnrock.com/wp-content/uploads/Image_qx9friqx9friqx9f.png"),
+            url("chrome://userchrome/content/hellnrock-bg.png") !important;
+        background-size: cover !important;
+        background-position: center !important;
+        background-attachment: fixed !important;
+        background-color: #101212 !important;
+    }
+
+    .outer-wrapper {
+        background: rgba(16, 18, 18, 0.78) !important;   /* más oscuro y elegante */
+    }
+
+    .search-wrapper .search-inner-wrapper {
+        background: rgba(16, 18, 18, 0.85) !important;
+        border: 1.5px solid rgba(199, 177, 130, 0.45) !important;
+        border-radius: 999px !important;
+        box-shadow: 0 0 12px 2px rgba(199, 177, 130, 0.15) !important;
+        transition: all 0.25s ease !important;
+    }
+
+    .search-wrapper .search-inner-wrapper:focus-within {
+        border-color: #C7B182 !important;
+        box-shadow: 0 0 20px 4px rgba(199, 177, 130, 0.35) !important;
+    }
+
+    .search-wrapper input {
+        color: #E8E3DE !important;
+    }
+
+    /* Topsites */
+    .top-site-outer .top-site-inner {
+        background: rgba(99, 79, 95, 0.28) !important;
+        border: 1px solid rgba(199, 177, 130, 0.25) !important;
+        border-radius: 12px !important;
+        transition: all 0.25s ease !important;
+    }
+
+    .top-site-outer:hover .top-site-inner {
+        border-color: #C7B182 !important;
+        box-shadow: 0 0 16px 3px rgba(199, 177, 130, 0.3) !important;
+        transform: translateY(-2px);
+    }
+
+    .top-site-label {
+        color: #E8E3DE !important;
+        font-size: 11.5px !important;
+    }
+}
