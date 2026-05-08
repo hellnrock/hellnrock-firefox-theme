@@ -1,0 +1,154 @@
+/* =====================================================================
+   HellNRock Firefox Theme — Estilo Web Premium
+   ===================================================================== */
+
+/* Core Colors */
+:root {
+  --deep-black: #101212;
+  --old-gold: #C7B182;
+  --uva-pink: #634F5F;
+  --white-smoke: #F4F1EE;
+}
+
+/* ==================== ANIMACIÓN DE RESPIRACIÓN ==================== */
+@keyframes hellnrock-breathe {
+  0%, 100% { transform: scale(1) translateY(0); }
+  50%      { transform: scale(1.012) translateY(-1px); }
+}
+
+@keyframes hellnrock-gold-shine {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 200% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Pestaña activa */
+.tabbrowser-tab[selected="true"] .tab-background,
+.tabbrowser-tab[visuallyselected="true"] .tab-background {
+  background: linear-gradient(135deg, rgba(199, 177, 130, 0.16), rgba(99, 79, 95, 0.22)) !important;
+  box-shadow: 0 4px 25px rgba(199, 177, 130, 0.35) !important;
+  position: relative !important;
+  overflow: hidden;
+  animation: hellnrock-breathe 6.5s ease infinite !important;
+}
+
+/* Shine dorado fluido */
+.tabbrowser-tab[selected="true"] .tab-background::before {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  background: linear-gradient(90deg, transparent 25%, rgba(199, 177, 130, 0.75) 45%, #E8E3DE 52%, rgba(199, 177, 130, 0.75) 58%, transparent 75%) !important;
+  background-size: 300% 100% !important;
+  animation: hellnrock-gold-shine 5s linear infinite !important;
+  z-index: 2 !important;
+  opacity: 0.55;
+  mix-blend-mode: screen;
+}
+
+/* Glow inferior */
+.tabbrowser-tab[selected="true"] .tab-background::after {
+  content: "" !important;
+  position: absolute !important;
+  bottom: 0; left: 10%; right: 10%;
+  height: 8px !important;
+  background: linear-gradient(transparent, var(--old-gold)) !important;
+  filter: blur(4px) !important;
+  opacity: 0.6;
+  z-index: 1 !important;
+}
+
+/* Hover pestañas */
+.tabbrowser-tab:hover .tab-background {
+  background: rgba(199, 177, 130, 0.09) !important;
+  box-shadow: 0 8px 20px rgba(199, 177, 130, 0.2) !important;
+  transform: translateY(-2px) !important;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+}
+
+/* ==================== OSCURECER TODO EL UI ==================== */
+#navigator-toolbox, #TabsToolbar, #toolbar-menubar, .toolbar,
+#PersonalToolbar, #sidebar-box, .sidebar, #urlbar-background,
+#searchbar, .panel-content, #main-window, #browser, #titlebar {
+  background-color: var(--deep-black) !important;
+  border-color: #1a1a1c !important;
+}
+
+#titlebar, #TabsToolbar {
+  background-color: #0c0c0d !important;
+}
+
+.tabbrowser-tab:not([selected]) .tab-background {
+  background-color: var(--deep-black) !important;
+}
+
+/* ==================== BARRA DE BÚSQUEDA BRILLO ==================== */
+#urlbar-background {
+  background-color: rgba(16, 18, 18, 0.95) !important;
+  border: 1.5px solid rgba(199, 177, 130, 0.35) !important;
+  box-shadow: 0 0 15px rgba(199, 177, 130, 0.25) !important;
+  transition: all 0.4s ease !important;
+}
+
+#urlbar[focused] #urlbar-background {
+  border-color: #C7B182 !important;
+  box-shadow: 0 0 25px rgba(199, 177, 130, 0.6) !important;
+}
+
+/* ==================== FIX MENÚ CONTEXTUAL NEW TAB ==================== */
+@-moz-document url-prefix("about:newtab"), url-prefix("about:home") {
+    .newtab-context-menu, menu, .menu, [role="menu"], .popover, .context-menu {
+        background: #101212 !important;
+        border: 2px solid #C7B182 !important;
+        border-radius: 16px !important;
+        box-shadow: 0 25px 60px rgba(0, 0, 0, 0.9) !important;
+        z-index: 2147483647 !important;
+        color: #E8E3DE !important;
+    }
+
+    menuitem, [role="menuitem"], .menuitem, .context-menu-item {
+        padding: 12px 20px !important;
+        border-radius: 10px !important;
+        color: #E8E3DE !important;
+    }
+
+    menuitem:hover, [role="menuitem"]:hover, .menuitem:hover {
+        background: #C7B182 !important;
+        color: #101212 !important;
+    }
+
+    .top-site-outer button,
+    .context-menu-button {
+        background: #101212 !important;
+        border: 1px solid #C7B182 !important;
+    }
+}
+/* ==================== MODO PRIVADO (Incógnito) - HellNRock Style ==================== */
+:root[privatebrowsingmode="temporary"] {
+    --general-color: #C7B182 !important;           /* Oro como color principal en privado */
+    --accent-color: #634F5F !important;
+}
+
+/* Fondo negro profundo en modo privado */
+:root[privatebrowsingmode="temporary"] {
+    --lwt-main-image: url("https://hellnrock.com/wp-content/uploads/Image_qx9friqx9friqx9f.png") !important;
+    --brightness-wallpaper: 75% !important;
+    --brightness-toolbar: 30% !important;
+}
+
+/* New Tab en modo privado */
+@-moz-document url-prefix("about:privatebrowsing") {
+    body {
+        background-color: #101212 !important;
+        background-image: url("https://hellnrock.com/wp-content/uploads/Image_qx9friqx9friqx9f.png") !important;
+        background-size: cover !important;
+        background-position: center !important;
+    }
+
+    .private-window main {
+        background: rgba(16, 18, 18, 0.85) !important;
+    }
+
+    h1, p {
+        color: #C7B182 !important;
+    }
+}

@@ -1,0 +1,67 @@
+/* =====================================================================
+   HellNRock — one_root-personal.css
+   Brand palette: #101212 · #634F5F · #C7B182 · #E8E3DE
+   ===================================================================== */
+
+:root {
+    --general-color: #C7B182;
+    --accent-color: #634F5F;
+    --left-color: #C7B182;
+    --right-color: #634F5F;
+
+    --my-toolbar-border-radius: 10px;
+    --my-border-radius: 14px;
+    --my-blur: blur(18px);
+
+    --tab-height-personal: 28px;
+    --tab-min-width-personal: 22px;
+    --toolbar-height-personal: 38px;
+
+    --gradient-colors: #C7B182 0%, #634F5F 30%, #C7B182 60%, #E8E3DE 80%, #C7B182 100%;
+
+    --my-newtab-elements-background: color-mix(in srgb, #C7B182 8%, transparent);
+    --my-newtab-pinnedsites-position: center;
+    --my-selected-text-background: #C7B182;
+
+    --my-vertical-toolbar-width: 52px;
+    --uc-sidebar-width: 52px;
+    --uc-sidebar-hover-width: 220px;
+}
+
+/* ==================== FONDO NEW TAB ==================== */
+@-moz-document url-prefix("about:newtab"), url-prefix("about:home") {
+    body, #newtab-grid {
+        background-image: url("https://hellnrock.com/wp-content/uploads/Image_qx9friqx9friqx9f.png") !important;
+        background-size: cover !important;
+        background-position: center !important;
+        background-repeat: no-repeat !important;
+        background-attachment: fixed !important;
+    }
+
+    #newtab-grid::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba(16, 18, 18, 0.72) !important;
+        z-index: -1;
+    }
+}
+
+/* Páginas internas (about:config, etc.) */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --lwt-main-image: url("https://hellnrock.com/wp-content/uploads/Image_qx9friqx9friqx9f.png") !important;
+        --brightness-wallpaper: 72% !important;
+        --brightness-toolbar: 30% !important;
+
+        --button-smaller-bgcolor: color-mix(in srgb, #C7B182 18%, transparent);
+        --button-bgcolor: color-mix(in srgb, #C7B182 38%, transparent) !important;
+        --button-hover-bgcolor: color-mix(in srgb, #C7B182 52%, transparent) !important;
+        --button-active-bgcolor: color-mix(in srgb, #C7B182 70%, transparent) !important;
+    }
+}
+
+/* Modo privado */
+:root[privatebrowsingmode="temporary"] {
+    --general-color: #634F5F !important;
+}
